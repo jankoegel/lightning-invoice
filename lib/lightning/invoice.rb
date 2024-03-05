@@ -22,7 +22,7 @@ module Lightning
         human = to_human_string
         data = to_data_array
         data += Invoice.buffer_to_word(signature.htb)
-        Bech32.encode(human, data)
+        Bech32.encode(human, data, Bech32::Encoding::BECH32M)
       end
 
       def fallback_address_type(fallback_address)
